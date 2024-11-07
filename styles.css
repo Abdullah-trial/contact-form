@@ -1,0 +1,153 @@
+:root {
+  /*
+    NOTE: 1rem === 16px
+    thus, 1440px === 90rem and 375px === 23.4375rem
+  */
+  --desktop-view-size: 90rem;
+  --mobile-view-size: 23.4375rem;
+  --min-font-weight: 400;
+  --max-font-weight: 700;
+  --radius-value: 0.3rem;
+  --green-lighter: hsl(148, 38%, 91%);
+  --green-medium: hsl(169, 82%, 27%);
+  --red: hsl(0, 66%, 54%);
+  --white-neutral: hsl(0, 0%, 100%);
+  --gray-light-neutral: hsl(186, 15%, 59%);
+  --gray-medium-neutral: hsl(187, 24%, 22%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Karla";
+  src: url(./assets/fonts/Karla-VariableFont_wght.ttf);
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: clamp(1rem, 1rem, 1.6rem);
+  font-weight: var(--min-font-weight-weight);
+  background-color: var(--green-lighter);
+  display: flex;
+  max-width: 90rem;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  background-color: var(--white-neutral);
+}
+
+.name-inputs,
+.email-input {
+  height: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.name-inputs,
+.email-input,
+.message-input {
+  border: 0.1rem solid var(--gray-light-neutral);
+  border-radius: var(--radius-value);
+  margin: 0.5rem 0rem;
+  font-size: 1rem;
+}
+.message-input {
+  height: 5rem;
+  padding: 0.5rem;
+}
+.name-inputs:focus,
+.email-input:focus,
+.message-input:focus {
+  border: 0.14rem solid var(--gray-medium-neutral);
+  outline: none;
+}
+
+.name-inputs,
+.radio-label {
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.radio-label {
+  flex-direction: row;
+  border: 0.1rem solid var(--gray-light-neutral);
+  height: 2rem;
+  cursor: pointer;
+  border-radius: var(--radius-value);
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.enquiry {
+  margin-right: 1rem;
+}
+.radio-input {
+  margin-right: 0.5rem;
+  accent-color: var(--green-medium);
+  cursor: pointer;
+}
+
+.terms-label {
+  margin: 1rem 0rem;
+  display: flex;
+  text-align: center;
+  cursor: pointer;
+}
+.terms-checkbox {
+  margin-right: 1rem;
+  cursor: pointer;
+  accent-color: var(--green-medium);
+}
+
+.name-input-container,
+.query-input-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+.name-input-container {
+  margin: 2rem 0rem 1rem;
+}
+.query-input-container {
+  margin: 1rem 0rem;
+}
+.btn-submit {
+  background-color: var(--green-medium);
+  color: var(--white-neutral);
+  border: none;
+  padding: 0.7rem 0rem;
+  margin-top: 0.5rem;
+  border-radius: var(--radius-value);
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: var(--gray-medium-neutral);
+}
+
+.error-msg {
+  color: var(--red);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.no-error {
+  display: none;
+}
+.add-bg-color {
+  background-color: var(--green-lighter);
+}
