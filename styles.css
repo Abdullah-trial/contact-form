@@ -117,7 +117,6 @@ p {
 .query-input-container {
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: space-between;
 }
 .name-input-container {
@@ -125,6 +124,7 @@ p {
 }
 .query-input-container {
   margin: 1rem 0rem;
+  align-items: center;
 }
 .btn-submit {
   background-color: var(--green-medium);
@@ -145,9 +145,43 @@ p {
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
-.no-error {
+.no-error-msg {
   display: none;
 }
 .add-bg-color {
   background-color: var(--green-lighter);
+}
+
+@media only screen and (max-width: 23.4375rem) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: var(--mobile-view-size);
+  }
+  form {
+    width: 90%;
+  }
+  .name-input-container,
+  .query-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .name-label,
+  .name-inputs,
+  .radio-label {
+    width: 100%;
+  }
+
+  .enquiry {
+    margin-bottom: 0.7rem;
+  }
+  .terms-label {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
 }
