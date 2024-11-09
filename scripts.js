@@ -31,6 +31,15 @@ const checkErrState = function (DOMElement, testCase, ...msgAndClass) {
 const textErrMsgFunc = function (inputElement, errorMsg, givenClass) {
   checkErrState(inputElement, inputElement.value === "", errorMsg, givenClass);
 };
+const emailErrMsgFunc = function (inputElement, errorMsg, givenClass) {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  checkErrState(
+    inputElement,
+    !emailRegex.test(inputElement.value),
+    errorMsg,
+    givenClass
+  );
+};
 
 const checkboxErrMsgFunc = function (inputElement, errorMsg, givenClass) {
   checkErrState(
@@ -68,7 +77,7 @@ btnSubmit.addEventListener("click", function (event) {
     "This field is required",
     "last-name-error-msg"
   );
-  textErrMsgFunc(
+  emailErrMsgFunc(
     emailInput,
     "Please enter a valid email address",
     "email-error-msg"
